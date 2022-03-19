@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "bang",
+  "version": "${version}",
+
+  "name": "Benchworking Aesthetic Noise Generator (BANG)",
+  "description": "Yet another sound overhaul (not really) mod for Minecraft.",
+  "authors": [
+    "Peakstep"
+  ],
+  "contact": {
+    "sources": "https://github.com/Nova-Committee/BANG"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/bang/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "committee.nova.pkst.bang.BANG"
+    ]
+  },
+  "mixins": [
+    "bang.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.13.3",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  }
+}
