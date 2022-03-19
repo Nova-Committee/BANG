@@ -38,6 +38,8 @@
     "minecraft:netherite_chestplate",
     "minecraft:netherite_helmet",
     "minecraft:netherite_leggings",
-    "minecraft:netherite_boots"
+    "minecraft:netherite_boots",
+    "minecraft:shield",
+    "minecraft:shears"
   ]
 }

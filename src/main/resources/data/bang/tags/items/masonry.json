@@ -3,6 +3,9 @@
   "values": [
     "#minecraft:stone_bricks",
     "#minecraft:stone_crafting_materials",
+    "minecraft:stone",
+    "minecraft:deepslate",
+    "minecraft:basalt",
     "minecraft:cobblestone_stairs",
     "minecraft:sandstone_stairs",
     "minecraft:nether_brick_stairs",
@@ -70,6 +73,11 @@
     "minecraft:cobbled_deepslate_slab",
     "minecraft:polished_deepslate_slab",
     "minecraft:deepslate_tile_slab",
-    "minecraft:deepslate_brick_slab"
+    "minecraft:deepslate_brick_slab",
+    "minecraft:stone_sword",
+    "minecraft:stone_pickaxe",
+    "minecraft:stone_axe",
+    "minecraft:stone_shovel",
+    "minecraft:stone_hoe"
   ]
 }
