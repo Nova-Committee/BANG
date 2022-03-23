@@ -1,0 +1,11 @@
+modLoader = "javafml"
+loaderVersion = "[38,)"
+license = "AGPL v3"
+[[mods]]
+modId = "bang"
+version = "1.0.0"
+displayName = "BANG"
+credits = ""
+authors = "Peakstep, Tapio"
+description = '''
+'''
