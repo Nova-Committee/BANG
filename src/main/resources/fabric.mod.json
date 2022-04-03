@@ -3,10 +3,16 @@
   "id": "bang",
   "version": "${version}",
 
-  "name": "Benchworking Aesthetic Noise Generator (BANG)",
-  "description": "Yet another sound overhaul (not really) mod for Minecraft.",
+  "name": "One Benchworking Aesthetic Noise Generator™ At A Time",
+  "description": "The revolution (not really) of Minecraft's sound system.",
   "authors": [
-    "Peakstep"
+    "pkstDev",
+    "pkstDev's Mom",
+    "pkstDev's Dad",
+    "pkstDev's Dog",
+    "pkstDev's Neighbors",
+    "Mudrock",
+    "why?"
   ],
   "contact": {
     "sources": "https://github.com/Nova-Committee/BANG"
@@ -27,7 +33,6 @@
 
   "depends": {
     "fabricloader": ">=0.13.3",
-    "minecraft": "1.18.x",
     "java": ">=17"
   }
 }
