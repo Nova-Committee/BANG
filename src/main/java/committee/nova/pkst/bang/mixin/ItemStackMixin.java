@@ -18,14 +18,19 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class ItemStackMixin {
     @Shadow public abstract boolean isIn(TagKey<Item> tag);
 
+    private static Long last = System.currentTimeMillis();
+    private static final Long duration = 50L;
+
     @Inject(method = "onCraft", at = @At("RETURN"))
     public void playSoundOnCraft(World world, PlayerEntity player, int amount, CallbackInfo ci) {
-        if (!world.isClient) {
-            if (this.isIn(BANG.CARPENTRY)) world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1f, 1f);
-            if (this.isIn(BANG.METALWORKING)) world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.BLOCK_ANVIL_USE, SoundCategory.BLOCKS, 1f, 1f);
-            if (this.isIn(BANG.INFUSION)) world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.BLOCK_ENCHANTMENT_TABLE_USE, SoundCategory.BLOCKS, 1f, 1f);
-            if (this.isIn(BANG.MASONRY)) world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.BLOCK_STONE_BREAK, SoundCategory.BLOCKS, 1f, 1f);
-            if (this.isIn(BANG.JEWELRY)) world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.BLOCK_AMETHYST_BLOCK_BREAK, SoundCategory.BLOCKS, 1f, 1f);
-        }
+        if (world.isClient) return;
+        Long now = System.currentTimeMillis();
+        if (now - last < duration) return;
+        last = now;
+        if (this.isIn(BANG.CARPENTRY)) world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1f, 1f);
+        if (this.isIn(BANG.METALWORKING)) world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.BLOCK_ANVIL_USE, SoundCategory.BLOCKS, 1f, 1f);
+        if (this.isIn(BANG.INFUSION)) world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.BLOCK_ENCHANTMENT_TABLE_USE, SoundCategory.BLOCKS, 1f, 1f);
+        if (this.isIn(BANG.MASONRY)) world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.BLOCK_STONE_BREAK, SoundCategory.BLOCKS, 1f, 1f);
+        if (this.isIn(BANG.JEWELRY)) world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.BLOCK_AMETHYST_BLOCK_BREAK, SoundCategory.BLOCKS, 1f, 1f);
     }
 }
